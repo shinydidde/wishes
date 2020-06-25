@@ -11,6 +11,27 @@ body {
   padding: 50px;
 }
 
+@media only screen and (max-width: 767px) {
+  body {
+   padding: 0;
+  }
+  #card h1 {
+    font-size: 17px !important;
+  }
+  #card-inside {
+    font-size: 11px !important;
+  }
+  #card, #card-front, #card-inside {
+    height: 95vh !important;
+  }
+  #card-front .wrap img {
+    width: 60% !important;
+    left: 20% !important;
+  }
+}
+
+
+
 #card-front {
   color: #FFDFDF;
 }
