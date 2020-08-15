@@ -28,6 +28,7 @@ body {
     margin-top: 100% !important;
     font-size: 23px !important;
     line-height: 300% !important;
+    margin-left: -25px;
   }
   #card-front button{
     right: 0 !important;
@@ -150,6 +151,9 @@ p.signed {
     -webkit-transition: background 1s linear;
     background-image: url(https://img.pngio.com/flower-png-hd-flower-png-image-free-download-searchpngcom-flower-background-png-2048_2048.png);
     background-size: cover;
+    -webkit-box-shadow: -1px 0px 5px 0px rgba(61,61,61,1);
+-moz-box-shadow: -1px 0px 5px 0px rgba(61,61,61,1);
+box-shadow: -1px 0px 5px 0px rgba(61,61,61,1);
 }
 
 #card-front .wrap img{
@@ -265,7 +269,8 @@ footer {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	overflow: hidden
+  overflow: hidden;
+  background: black;
 }
 
 .heart {
@@ -275,7 +280,7 @@ footer {
 	-moz-transform: rotate(-45deg);
 	-m-transform: rotate(-45deg);
 	transform: rotate(-45deg);
-	opacity: 1;
+	opacity: 0.6;
 }
 
 .heart:before {
@@ -337,3 +342,42 @@ footer {
 		top: 150%
 	}
 }
+
+
+#backgroundaudio { 
+  display: block; 
+  position: fixed; 
+  bottom: -43px; 
+  left: 5px; 
+  -webkit-transition: all 1s ease-in-out; 
+  -moz-transition: all 1s ease-in-out; 
+  -ms-transition: all 1s ease-in-out; 
+  -o-transition: all 1s ease-in-out; 
+  transition: all 1s ease-in-out; 
+  } 
+  #backgroundaudio:hover { 
+  bottom: 0; 
+  -webkit-transition: all 1s ease-in-out; 
+  -moz-transition: all 1s ease-in-out; 
+  -ms-transition: all 1s ease-in-out; 
+  -o-transition: all 1s ease-in-out; 
+  transition: all 1s ease-in-out; 
+  } 
+  #backgroundaudio audio { 
+  background: #ffffff; 
+  padding: 5px; 
+  display: table-cell; 
+  vertical-align: middle; 
+  height: 43px; 
+  z-index: 9998; 
+  } 
+  #backgroundaudio i { 
+  font-size: 40px; 
+  display: block; 
+  background: #ffffff; 
+  padding: 5px; 
+  width: 50px; 
+  float: none; 
+  margin-bottom: -1px; 
+  z-index: 9999; 
+  } 
