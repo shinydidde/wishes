@@ -5,8 +5,8 @@
 	src: url("./Hearth\ Stone.ttf");
   }
   @font-face {
-    font-family: "DMSans-Regular";
-    src: url("./DMSans-Regular.ttf");
+    font-family: "FontleroyBrown";
+    src: url("./FontleroyBrownNF.ttf");
     }
 * {
   box-sizing: border-box;
@@ -26,14 +26,23 @@ body {
   }
   #card h1 {
     margin-top: 100% !important;
-    font-size: 20px !important;
+    font-size: 23px !important;
+    line-height: 300% !important;
+  }
+  #card-front button{
+    right: 0 !important;
   }
   #card-inside {
-    font-size: 11px !important;
+    font-size: 15px !important;
   }
   #card, #card-front, #card-inside {
     height: 70vh !important;
   }
+  .open-fully #card-front .wrap .anim {
+    width: 100% !important;
+    top: 28% !important;
+    left: -10% !important;
+}
 }
 
 
@@ -96,10 +105,10 @@ body {
     line-height: 185%;
 }
 #card-inside {
-    font-size: 1.1em;
+    font-size: 30px;
     line-height: 1.4;
-    font-family: 'HearthStone';
-    color: #331717;
+    font-family: 'FontleroyBrown';
+    color: darksalmon;
     font-style: italic;
 }
 
@@ -266,7 +275,7 @@ footer {
 	-moz-transform: rotate(-45deg);
 	-m-transform: rotate(-45deg);
 	transform: rotate(-45deg);
-	opacity: 0.4;
+	opacity: 1;
 }
 
 .heart:before {
