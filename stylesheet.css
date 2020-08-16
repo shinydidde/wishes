@@ -15,7 +15,6 @@
 }
 body {
   background: #E5E5E5;
-  background-image: url("/gray-floral.png");
   padding: 50px;
   font-family: 'HearthStone';
 }
@@ -40,9 +39,9 @@ body {
     height: 70vh !important;
   }
   .open-fully #card-front .wrap .anim {
-    width: 100% !important;
-    top: 28% !important;
-    left: -10% !important;
+    width: 115% !important;
+    top: -5% !important;
+    left: -6% !important;
 }
 }
 
@@ -178,10 +177,14 @@ box-shadow: -1px 0px 5px 0px rgba(61,61,61,1);
 
 .open-fully #card-front .wrap .anim{
   display: block !important;
-  width: 50%;
+  width: 116%;
   position: absolute;
-  top: 25%;
-  left: 20%;
+  top: -33px;
+  left: -7%;
+  height: 105%;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  opacity: 0.6;
 }
 
 #card-front button {
