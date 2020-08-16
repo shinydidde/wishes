@@ -42,7 +42,10 @@ body {
     width: 115% !important;
     top: -5% !important;
     left: -6% !important;
-}
+  }
+  #card-front .wrap .out{
+    width: 40% !important;
+  }
 }
 
 
@@ -155,11 +158,11 @@ p.signed {
 box-shadow: -1px 0px 5px 0px rgba(61,61,61,1);
 }
 
-#card-front .wrap img{
-  width: 30%;
+#card-front .wrap .out{
+  width: 20%;
   position: absolute;
-  left: 35%;
-  bottom: 25%;
+  left: 0%;
+  bottom: 0%;
 }
 
 #card-inside .wrap .love{
