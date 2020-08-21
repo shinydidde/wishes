@@ -2,7 +2,6 @@
 	function $(id) {
 	  return document.getElementById(id);
 	}
-  
 	var card = $('card'),
 		openB = $('open'),
 		closeB = $('close'),
@@ -25,7 +24,6 @@
 		timer = null;
 	  }, 1000);
 	});
-  
   }());
 
   // Hearts falling

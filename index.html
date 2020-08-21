@@ -24,6 +24,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body class="bg_heart">
+	<audio class="audioDemo" controls loop style="visibility:hidden">
+		<source src="./music.mp3" type="audio/mpeg">
+		<source src="./music.mp3" type="audio/ogg">
+	 </audio>
 	<div id="card">
 		<div id="card-inside">
 		  <div class="wrap">
@@ -31,7 +35,7 @@
 			<p>I wish you all the best on your Big Day and every day, may your life be full of joy, love and prosperity!</p>
 			<p>You are so special in my life, not only for being my lovely sister, but also for being one of my friend. Without you I would have not made this far.</p>
 			<img class="love" src="https://i.gifer.com/3p36.gif"/>
-			<p class="signed">MD</p>
+			<!-- <img class="long" src="./saree.png"/> -->
 		  </div>
 		</div>
 		<div id="card-front">
@@ -46,4 +50,5 @@
 	  </div>
 </body>
 <script src="effect.js"></script>
+<script>$(".audioDemo").trigger('play');</script>
 </html>

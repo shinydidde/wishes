@@ -77,8 +77,6 @@ body {
     -webkit-box-shadow: inset 2px 0 1px rgba(0, 0, 0, .05);
     -moz-box-shadow: inset 2px 0 1px rgba(0, 0, 0, .05);
     box-shadow: inset 2px 0 1px rgba(0, 0, 0, .05);
-    /* background-image: url(https://www.jing.fm/clipimg/full/3-31820_blogwp-corner-flower-png.png);
-    background-size: inherit; */
 }
 
 #card {
@@ -113,6 +111,19 @@ body {
     font-family: 'FontleroyBrown';
     color: darksalmon;
     font-style: italic;
+    /* background-image: url(./red.png);
+    background-size: inherit; */
+}
+
+#card-inside .wrap{
+  position: relative;
+}
+
+#card-inside .wrap .long{
+  position: absolute;
+  right: 0;
+  width: 35%;
+  bottom: 0;
 }
 
 p {
@@ -276,7 +287,8 @@ footer {
 	width: 100%;
 	height: 100%;
   overflow: hidden;
-  background: black;
+  background-image: url(./red.png);
+  background-size: cover;
 }
 
 .heart {
