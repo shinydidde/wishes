@@ -24,10 +24,10 @@ body {
     padding: 50px 0px;
   }
   #card h1 {
-    margin-top: -20% !important;
-    font-size: 32px !important;
+    margin-top: -35% !important;
+    font-size: 25px !important;
     line-height: 300% !important;
-    margin-left: 10px !important;
+    margin-left: -15px !important;
   }
   #card-front button{
     right: 0 !important;
@@ -47,10 +47,7 @@ body {
     width: 40% !important;
   }
   #card-inside .wrap .long{
-    left: 50%;
-    margin-left: -50px;
-    width: 45% !important;
-    bottom: 2% !important;
+    left: 60% !important;
   }
 }
 
@@ -127,10 +124,10 @@ body {
 }
 
 #card-inside .wrap .long{
-  right: 0;
+  left: 35%;
   position: absolute;
-  width: 35%;
-  bottom: 0;
+  width: 12%;
+  top: 6%;
 }
 
 p {
