@@ -346,6 +346,7 @@ h6 {
 	background-size: cover;
 	position: relative;
 	background-repeat: no-repeat;
+	/* background-position: center !important; */
 }
 
 .qbootstrap-cover.friends {
