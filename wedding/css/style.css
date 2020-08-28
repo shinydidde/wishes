@@ -70,14 +70,16 @@ h1, h2, h3, h4, h5, h6 {
 @media screen and (max-width: 768px) {
   #qbootstrap-header {
     margin-top: 0;
-    background: #fff;
+    background: transparent;
     -webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
     -ms-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
   }
   #qbootstrap-header .navbar-brand {
-    color: #FF847C !important;
+    text-align: center !important;
+    width: 100%;
+    color: #ffffff !important;
   }
   #qbootstrap-header #navbar li a {
     color: rgba(0, 0, 0, 0.5) !important;
