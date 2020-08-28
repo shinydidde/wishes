@@ -419,6 +419,7 @@ h6 {
 	}
 }
 
+
 .qbootstrap-cover .display-t,
 .video-hero .display-t {
 	display: table;
@@ -1450,4 +1451,77 @@ h6 {
 	top: 20px;
 	right: 10px;
 	animation: scaleIn 4s infinite cubic-bezier(.36, .11, .89, .32);
+}
+
+
+
+/* nani */
+
+.nani .qbootstrap-cover.friends {
+	background-position: 0px 0px !important;
+}
+
+@media screen and (max-width: 768px) {
+	.nani .qbootstrap-cover{
+		height: inherit;
+		padding: 3em 0;
+		background-position: -140px 0 !important;
+	}
+	.nani .qbootstrap-cover.friends  .display-tc{
+		vertical-align: bottom;
+	}
+}
+
+@media screen and (max-width: 557px) {
+	.nani .qbootstrap-cover{
+		background-position: -270px 0 !important;
+	}
+	.nani .qbootstrap-cover.friends {
+		background-position: center !important;
+    	background-size: 150% 100%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.nani .qbootstrap-cover{
+		background-position: -300px 0 !important;
+	}
+	.nani .qbootstrap-cover.friends {
+		background-position: center !important;
+    	background-size: 150% 100%;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	.nani .qbootstrap-cover{
+		background-position: -320px 0 !important;
+	}
+	.nani .qbootstrap-cover.friends {
+		background-position: center !important;
+    	background-size: 150% 100%;
+	}
+
+	.family .copyright a{
+		font-size: 18px !important;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.nani .qbootstrap-cover{
+		background-position: -340px 0 !important;
+	}
+	.nani .qbootstrap-cover.friends {
+		background-position: center !important;
+    	background-size: 150% 100%;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.nani .qbootstrap-cover{
+		background-position: -370px 0 !important;
+	}
+	.nani .qbootstrap-cover.friends {
+		background-position: center !important;
+    	background-size: 150% 100%;
+	}
 }
