@@ -39,9 +39,9 @@ body {
     height: 70vh !important;
   }
   .open-fully #card-front .wrap .anim {
-    width: 101% !important;
-    top: -4% !important;
-    left: -1% !important;
+    width: 104% !important;
+    top: -2% !important;
+    left: -2% !important;
   }
   .open-fully #card-front .wrap {
     background-size: cover !important;
@@ -204,11 +204,11 @@ box-shadow: -1px 0px 5px 0px rgba(61,61,61,1);
 
 .open-fully #card-front .wrap .anim{
   display: block !important;
-  width: 101%;
+  width: 104%;
   position: absolute;
-  bottom: 1px;
-  left: -1%;
-  height: 104%;
+  bottom: -7px;
+  left: -2%;
+  height: 103%;
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
   opacity: 0.6;
