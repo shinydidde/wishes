@@ -354,12 +354,12 @@ h6 {
 }
 
 @media screen and (max-width: 768px) {
-	.qbootstrap-cover,
+	/* .qbootstrap-cover,
 	.video-hero {
 		height: inherit;
 		padding: 3em 0;
 		background-position: -140px 0 !important;
-	}
+	} */
 	.qbootstrap-cover.friends  .display-tc{
 		vertical-align: bottom;
 	}
