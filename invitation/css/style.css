@@ -366,27 +366,27 @@ h6 {
 }
 
 @media screen and (max-width: 557px) {
-	.qbootstrap-cover,
+	/* .qbootstrap-cover,
 	.video-hero {
 		background-position: -270px 0 !important;
-	}
+	} */
 	.qbootstrap-cover.friends {
 		background-position: 0px 0px !important;
 	}
 }
 
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
 	.qbootstrap-cover,
 	.video-hero {
 		background-position: -300px 0 !important;
 	}
-}
+} */
 
 @media screen and (max-width: 425px) {
-	.qbootstrap-cover,
+	/* .qbootstrap-cover,
 	.video-hero {
 		background-position: -320px 0 !important;
-	}
+	} */
 	.qbootstrap-cover.friends {
 		background-position: -25px 0px !important;
 	}
@@ -397,20 +397,20 @@ h6 {
 }
 
 @media screen and (max-width: 375px) {
-	.qbootstrap-cover,
+	/* .qbootstrap-cover,
 	.video-hero {
 		background-position: -340px 0 !important;
-	}
+	} */
 	.qbootstrap-cover.friends {
 		background-position: -50px 0px !important;
 	}
 }
 
 @media screen and (max-width: 320px) {
-	.qbootstrap-cover,
+	/* .qbootstrap-cover,
 	.video-hero {
 		background-position: -370px 0 !important;
-	}
+	} */
 	.qbootstrap-cover.friends {
 		background-position: -85px 0px !important;
 	}
