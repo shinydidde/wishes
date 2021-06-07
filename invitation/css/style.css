@@ -371,7 +371,7 @@ h6 {
 		background-position: -270px 0 !important;
 	}
 	.qbootstrap-cover.friends {
-		background-position: -40px 0px !important;
+		background-position: 0px 0px !important;
 	}
 }
 
@@ -379,9 +379,6 @@ h6 {
 	.qbootstrap-cover,
 	.video-hero {
 		background-position: -300px 0 !important;
-	}
-	.qbootstrap-cover.friends {
-		background-position: -90px 0px !important;
 	}
 }
 
