@@ -15,24 +15,24 @@
 
   <style>
     :root {
-      --primary-color: #1a1a1a;
-      --secondary-color: #2d2d2d;
-      --accent-color: #404040;
-      --text-primary: #000000;
-      --text-secondary: #4a4a4a;
+      --primary-color: #2980b9;
+      --secondary-color: #2c3e50;
+      --accent-color: #34495e;
+      --text-primary: #333;
+      --text-secondary: #555;
       --text-light: #6b6b6b;
-      --background: #ffffff;
+      --background: #f9f9f9;
       --surface: #ffffff;
-      --surface-alt: #f8f8f8;
+      --surface-alt: #f4f4f4;
       --border: #e0e0e0;
       --border-light: #f0f0f0;
       --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1);
       --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.15), 0 2px 4px -1px rgb(0 0 0 / 0.06);
       --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05);
       --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.25), 0 10px 10px -5px rgb(0 0 0 / 0.04);
-      --radius: 4px;
-      --radius-lg: 6px;
-      --radius-xl: 8px;
+      --radius: 10px;
+      --radius-lg: 10px;
+      --radius-xl: 10px;
     }
 
     * {
@@ -42,10 +42,10 @@
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
       color: var(--text-primary);
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      background-color: var(--background);
       min-height: 100vh;
       scroll-behavior: smooth;
     }
@@ -62,30 +62,15 @@
     }
 
     .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0;
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
       position: relative;
     }
 
-    .portfolio-card {
-      background: var(--surface);
-      border-radius: 12px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.8);
-      overflow: hidden;
-      animation: fadeInUp 0.8s ease-out;
-      position: relative;
-    }
-
-    .portfolio-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 5px;
-      background: linear-gradient(90deg, var(--primary-color), #2d2d2d);
-    }
 
     @keyframes fadeInUp {
       from {
@@ -112,9 +97,10 @@
 
     .header {
       text-align: center;
-      padding: 3rem 2rem;
-      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-      color: var(--surface);
+      padding: 20px;
+      background: linear-gradient(135deg, #2980b9, #2c3e50);
+      color: #fff;
+      border-radius: 10px;
       position: relative;
       overflow: hidden;
     }
@@ -136,11 +122,11 @@
     }
 
     .header img {
-      width: 160px;
-      height: 160px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
-      border: 5px solid var(--surface);
-      margin-bottom: 1.5rem;
+      border: 4px solid #fff;
+      margin-bottom: 1rem;
       object-fit: cover;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
       transition: all 0.4s ease;
@@ -154,12 +140,10 @@
     }
 
     h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.2rem, 4vw, 3rem);
-      font-weight: 700;
-      color: var(--surface);
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
       margin: 0;
-      letter-spacing: -0.02em;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
       position: relative;
       z-index: 2;
@@ -167,11 +151,8 @@
 
     .subtitle {
       font-size: 1.1rem;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.95);
+      color: #ecf0f1;
       margin-top: 0.75rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
       position: relative;
       z-index: 2;
     }
@@ -180,7 +161,7 @@
       display: flex;
       justify-content: center;
       gap: 1.5rem;
-      margin: 2rem 0 0 0;
+      margin: 1rem 0;
       flex-wrap: wrap;
     }
 
@@ -220,34 +201,27 @@
     }
 
     .contact-item a {
-      color: var(--surface);
+      color: #ecf0f1;
       text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      font-weight: 500;
-      font-size: 0.9rem;
+      gap: 0.5rem;
     }
 
     .contact-item i {
-      color: var(--surface);
-    }
-
-    .contact-item i {
+      color: #ecf0f1;
       font-size: 1.1rem;
       width: 20px;
       text-align: center;
     }
 
     h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.4rem, 2.5vw, 1.8rem);
-      font-weight: 700;
-      color: var(--text-primary);
-      margin: 0 0 1.5rem 0;
+      font-size: 1.8rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #2980b9;
       position: relative;
       padding-bottom: 0.75rem;
-      letter-spacing: 0.02em;
     }
 
     h2::after {
@@ -257,23 +231,21 @@
       left: 0;
       width: 60px;
       height: 3px;
-      background: linear-gradient(90deg, var(--primary-color), #2d2d2d);
+      background: linear-gradient(90deg, #2980b9, #2c3e50);
       border-radius: 2px;
     }
 
     h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin: 1.25rem 0 0.5rem 0;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      font-size: 1.4rem;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      color: #2980b9;
     }
 
     h4 {
       font-size: 0.9rem;
       font-weight: 700;
-      color: var(--text-primary);
+      color: #2980b9;
       margin: 0.5rem 0 0.25rem 0;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -287,9 +259,10 @@
     }
 
     .section {
-      margin: 0;
-      padding: 2.5rem;
-      background: var(--surface);
+      margin-bottom: 2rem;
+      padding: 20px;
+      background: #f4f4f4;
+      border-radius: 10px;
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
@@ -306,7 +279,7 @@
       left: 0;
       width: 5px;
       height: 100%;
-      background: linear-gradient(180deg, var(--primary-color), #2d2d2d);
+      background: linear-gradient(180deg, #2980b9, #2c3e50);
       opacity: 0;
       transition: opacity 0.4s ease;
     }
@@ -362,7 +335,8 @@
     }
 
     .section ul li i {
-      color: var(--primary-color);
+      color: #2980b9;
+      margin-right: 0.5rem;
       min-width: 20px;
       text-align: center;
       margin-top: 0.1rem;
@@ -377,18 +351,16 @@
     }
 
     .skill-tag {
-      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-      color: var(--surface);
-      padding: 0.75rem 1.25rem;
-      border-radius: 25px;
-      font-size: 0.85rem;
+      background: #2980b9;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-size: 0.9rem;
       font-weight: 600;
       border: none;
       transition: all 0.4s ease;
       cursor: default;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 15px rgba(26, 26, 26, 0.2);
+      box-shadow: 0 4px 15px rgba(41, 128, 185, 0.2);
       position: relative;
       overflow: hidden;
     }
@@ -410,7 +382,7 @@
 
     .skill-tag:hover {
       transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 8px 25px rgba(26, 26, 26, 0.3);
+      box-shadow: 0 8px 25px rgba(41, 128, 185, 0.4);
     }
 
     .achievements ul {
@@ -420,11 +392,11 @@
     }
 
     .achievement-item {
-      padding: 1.5rem;
-      border-left: 4px solid var(--primary-color);
-      background: linear-gradient(135deg, var(--surface-alt) 0%, rgba(248, 248, 248, 0.7) 100%);
-      margin-bottom: 1rem;
-      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      padding: 1rem;
+      border-left: 4px solid #2980b9;
+      background: #f8f8f8;
+      margin-bottom: 0.5rem;
+      border-radius: 0 10px 10px 0;
       transition: all 0.4s ease;
       position: relative;
       overflow: hidden;
@@ -481,7 +453,7 @@
 
     .col h3 {
       margin-top: 0;
-      color: var(--text-primary);
+      color: #2980b9;
       font-size: 1.25rem;
     }
 
@@ -533,7 +505,7 @@
     }
 
     .personality-card h3 {
-      color: var(--text-primary);
+      color: #2980b9;
       margin-bottom: 1rem;
       font-size: 1.1rem;
       font-weight: 700;
@@ -579,7 +551,7 @@
 
     .trait-content h4 {
       margin: 0 0 0.25rem 0;
-      color: var(--text-primary);
+      color: #2980b9;
       font-size: 0.9rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -796,7 +768,6 @@
   <div class="scroll-progress"></div>
 
   <div class="container">
-    <div class="portfolio-card">
       <div class="header">
         <div class="profile-container">
           <img src="images/sindhu.png" alt="Sindhuri Alugolu" />
@@ -1095,7 +1066,6 @@
         <p>Place: Visakhapatnam</p>
         <p>Signature: Sindhuri Alugolu</p>
       </div>
-    </div>
   </div>
 
   <script>
