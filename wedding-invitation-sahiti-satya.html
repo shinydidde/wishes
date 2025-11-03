@@ -96,6 +96,238 @@ body {
 	50% { opacity: 0.7; transform: scale(1.05); }
 }
 
+/* Elegant Floating Animations */
+@keyframes float {
+	0%, 100% { transform: translateY(0px) rotate(0deg); }
+	50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes floatSlow {
+	0%, 100% { transform: translateY(0px) rotate(0deg); }
+	50% { transform: translateY(-15px) rotate(-3deg); }
+}
+
+@keyframes floatReverse {
+	0%, 100% { transform: translateY(0px) rotate(0deg); }
+	50% { transform: translateY(20px) rotate(-5deg); }
+}
+
+@keyframes sparkle {
+	0%, 100% { opacity: 0.3; transform: scale(0.8); }
+	50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Floating Decorative Elements */
+.floating-decorative {
+	position: fixed;
+	width: 60px;
+	height: 60px;
+	z-index: 2;
+	pointer-events: none;
+	opacity: 0.4;
+	animation: float 6s ease-in-out infinite;
+}
+
+.floating-decorative:nth-child(2n) {
+	animation: floatSlow 8s ease-in-out infinite;
+	animation-delay: -2s;
+}
+
+	.floating-decorative:nth-child(3n) {
+		animation: floatReverse 7s ease-in-out infinite;
+		animation-delay: -4s;
+	}
+
+	.floating-decorative svg {
+		width: 100%;
+		height: 100%;
+		filter: drop-shadow(0 4px 8px rgba(155, 123, 184, 0.2));
+	}
+
+	@media (max-width: 768px) {
+		.floating-decorative {
+			opacity: 0.2;
+			width: 40px;
+			height: 40px;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.floating-decorative {
+			display: none;
+		}
+	}
+
+/* Elegant Scroll Indicator */
+.scroll-indicator {
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 30px;
+	height: 50px;
+	border: 2px solid rgba(155, 123, 184, 0.5);
+	border-radius: 25px;
+	z-index: 10;
+	opacity: 0.7;
+}
+
+.scroll-indicator::before {
+	content: '';
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 6px;
+	height: 6px;
+	background: rgba(155, 123, 184, 0.7);
+	border-radius: 50%;
+	animation: scrollDown 2s ease-in-out infinite;
+}
+
+@keyframes scrollDown {
+	0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+	100% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+}
+
+/* Smooth Transitions */
+.event-card,
+.vintage-section,
+.closing-section {
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Elegant Gradient Overlays */
+.elegant-overlay {
+	position: relative;
+}
+
+.elegant-overlay::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(155, 123, 184, 0.05) 100%);
+	pointer-events: none;
+	z-index: 1;
+}
+
+/* Animated Hearts/Sparkles */
+.sparkle {
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	background: radial-gradient(circle, #9b7bb8 0%, transparent 70%);
+	border-radius: 50%;
+	animation: sparkle 3s ease-in-out infinite;
+	pointer-events: none;
+}
+
+/* Smooth fade-in animations */
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.events-timeline,
+.vintage-section,
+.closing-section {
+	animation: fadeInUp 1s ease-out;
+}
+
+/* Elegant hover effects for decorative images */
+.decorative-image,
+.timeline-decoration-left,
+.timeline-decoration-right {
+	transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.decorative-image:hover,
+.timeline-decoration-left:hover,
+.timeline-decoration-right:hover {
+	transform: scale(1.1) rotate(5deg);
+	opacity: 1;
+}
+
+/* Enhanced card shadows with subtle glow */
+.event-card {
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.event-card:hover {
+	box-shadow: 0 20px 40px rgba(155, 123, 184, 0.15), 0 0 20px rgba(155, 123, 184, 0.1) !important;
+}
+
+/* Animate existing decorative shapes */
+.left-shape .shape,
+.right-shape .shape {
+	animation: floatSlow 10s ease-in-out infinite;
+	transition: transform 0.3s ease;
+}
+
+.left-shape .shape:nth-child(2n),
+.right-shape .shape:nth-child(2n) {
+	animation: float 12s ease-in-out infinite;
+	animation-delay: -2s;
+}
+
+.left-shape .shape:nth-child(3n),
+.right-shape .shape:nth-child(3n) {
+	animation: floatReverse 11s ease-in-out infinite;
+	animation-delay: -4s;
+}
+
+/* Smooth text animations */
+.hero-text h2,
+.hero-text p {
+	text-shadow: 0 2px 10px rgba(45, 134, 89, 0.1);
+}
+
+/* Elegant image transitions */
+.ghibli-image,
+.decorative-image {
+	transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.ghibli-image:hover {
+	transform: scale(1.02);
+	filter: brightness(1.05);
+}
+
+/* Refined spacing and typography */
+.event-name {
+	position: relative;
+}
+
+.event-name::after {
+	content: '';
+	position: absolute;
+	bottom: -5px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 0;
+	height: 2px;
+	background: linear-gradient(90deg, transparent, #9b7bb8, transparent);
+	transition: width 0.4s ease;
+}
+
+.event-card:hover .event-name::after {
+	width: 60%;
+}
+
 /* Top Garland Decoration */
 .sukun-invitation::before {
 	content: '';
@@ -278,6 +510,9 @@ body {
 	max-width: 900px;
 	text-align: center;
 	position: relative;
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 248, 255, 0.98) 100%);
+	border-radius: 20px;
+	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
 }
 
 .timeline-header {
@@ -532,6 +767,9 @@ body {
 	max-width: 800px;
 	text-align: center;
 	position: relative;
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 248, 250, 0.95) 100%);
+	border-radius: 15px;
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
 }
 
 .vintage-text {
@@ -1181,6 +1419,31 @@ body {
 	🔊
 </button>
 
+<!-- Floating Decorative Elements -->
+<div class="floating-decorative" style="top: 10%; left: 5%; animation-delay: 0s;">
+	<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+		<path d="M50 20 C55 20, 60 25, 60 30 C60 35, 55 40, 50 40 C45 40, 40 35, 40 30 C40 25, 45 20, 50 20 Z" fill="#9b7bb8" opacity="0.6"/>
+		<path d="M50 60 L55 75 L45 75 Z" fill="#9b7bb8" opacity="0.6"/>
+	</svg>
+</div>
+<div class="floating-decorative" style="top: 25%; right: 8%; animation-delay: -1.5s;">
+	<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+		<circle cx="50" cy="50" r="15" fill="#2d8659" opacity="0.5"/>
+		<circle cx="50" cy="50" r="8" fill="#9b7bb8" opacity="0.7"/>
+	</svg>
+</div>
+<div class="floating-decorative" style="top: 60%; left: 3%; animation-delay: -3s;">
+	<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+		<path d="M50 10 L55 40 L50 50 L45 40 Z" fill="#2d8659" opacity="0.4"/>
+		<circle cx="50" cy="60" r="8" fill="#9b7bb8" opacity="0.5"/>
+	</svg>
+</div>
+<div class="floating-decorative" style="top: 80%; right: 5%; animation-delay: -4.5s;">
+	<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+		<path d="M50 20 C55 20, 60 25, 60 30 C60 35, 55 40, 50 40 C45 40, 40 35, 40 30 C40 25, 45 20, 50 20 Z" fill="#2d8659" opacity="0.5"/>
+	</svg>
+</div>
+
 <div class="page-wrapper layout-full">
 <!-- start preloader -->
 <div class="preloader">
@@ -1201,6 +1464,9 @@ body {
 				<div class="wpo-invitation-inner-item">
 					<div class="wpo-invitation-inner">
 						<div class="hero-text">
+							<div class="sparkle" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
+							<div class="sparkle" style="top: 15%; right: 25%; animation-delay: 1s;"></div>
+							<div class="sparkle" style="bottom: 20%; left: 30%; animation-delay: 2s;"></div>
 							<h2 class="wow fadeInUp" data-wow-duration="1200ms">Sahiti & Satya</h2>
 							<div class="wow fadeInUp" data-wow-duration="1400ms">
 								<span>We Are Getting Married On</span>
@@ -1266,8 +1532,9 @@ body {
 									<h4 class="event-name">Haldi Ceremony</h4>
 									<div class="event-details">
 										<p class="event-date">Friday, 21st November 2025</p>
-										<p class="event-time">10:00 AM Onwards</p>
-										<p class="event-description">A joyous morning ritual with turmeric blessings</p>
+										<p class="event-time"><strong>Groom's Haldi:</strong> 7:00 AM at Groom's Place</p>
+										<p class="event-time"><strong>Bride's Haldi:</strong> 4:00 PM at Bride's Place</p>
+										<p class="event-description">A joyous ritual with turmeric blessings</p>
 										<p class="event-dress-code">Dress Code: <span>Yellow/White Traditional Wear</span></p>
 									</div>
 								</div>
