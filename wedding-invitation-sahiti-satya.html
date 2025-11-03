@@ -116,13 +116,13 @@ body {
 /* Event Details Styling */
 .wpo-event-text {
 	text-align: center;
-	margin: 40px auto 60px auto;
+	margin: 40px auto 40px auto;
 	padding: 40px 30px;
 	max-width: 550px;
 	position: relative;
 	background-image: url('./ghibli.png');
 	background-size: cover;
-	background-position: center;
+	background-position: center top !important;
 	background-repeat: no-repeat;
 	border-radius: 12px;
 	overflow: hidden;
@@ -135,7 +135,7 @@ body {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: rgba(255, 255, 255, 0.85);
+	background: rgba(255, 255, 255, 0.75);
 	z-index: 1;
 }
 
@@ -372,8 +372,8 @@ body {
 /* Overall Section Styling */
 .sukun-invitation {
 	background: #ffffff !important;
-	padding: 30px 20px 60px 20px !important;
-	min-height: 100vh;
+	padding: 30px 20px 40px 20px !important;
+	min-height: auto;
 }
 
 /* Ensure text doesn't overflow on mobile */
@@ -420,7 +420,8 @@ body {
 @media (max-width: 768px) {
 	/* Overall Section */
 	.sukun-invitation {
-		padding: 20px 15px 40px 15px !important;
+		padding: 20px 15px 20px 15px !important;
+		min-height: auto !important;
 	}
 
 	/* Hero Text */
@@ -488,9 +489,14 @@ body {
 
 	/* Event Details */
 	.wpo-event-text {
-		margin: 25px auto 35px auto;
+		margin: 25px auto 20px auto;
 		padding: 25px 15px;
 		max-width: 95%;
+		background-position: center top !important;
+	}
+
+	.wpo-event-text::after {
+		background: rgba(255, 255, 255, 0.70) !important;
 	}
 
 	.wpo-event-text li {
@@ -542,7 +548,8 @@ body {
 /* Extra small devices */
 @media (max-width: 480px) {
 	.sukun-invitation {
-		padding: 15px 10px 35px 10px !important;
+		padding: 15px 10px 15px 10px !important;
+		min-height: auto !important;
 	}
 
 	.hero-text {
@@ -593,9 +600,14 @@ body {
 	}
 
 	.wpo-event-text {
-		margin: 20px auto 30px auto;
+		margin: 20px auto 15px auto;
 		padding: 20px 12px;
 		max-width: 98%;
+		background-position: center top !important;
+	}
+
+	.wpo-event-text::after {
+		background: rgba(255, 255, 255, 0.70) !important;
 	}
 
 	.wpo-event-text li:first-child {
@@ -652,7 +664,7 @@ body {
 						<div class="hero-text">
 							<h2 class="wow fadeInUp" data-wow-duration="1200ms">Sahiti & Satya</h2>
 							<div class="wow fadeInUp" data-wow-duration="1400ms">
-								<span>We Are Getting Married In</span>
+								<span>We Are Getting Married On</span>
 							</div>
 							<p class="wow fadeInUp" data-wow-duration="1600ms">22 . 11 . 2025</p>
 						</div>
