@@ -177,14 +177,34 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
+	position: relative;
+	overflow: visible;
 }
 
 .ghibli-image {
 	width: 50%;
-	height: 300px;
+	height: auto;
 	object-fit: cover;
 	object-position: top;
 	border-radius: 15px;
+	position: relative;
+	z-index: 2;
+}
+
+/* Garland decoration around ghibli image */
+.garland-decoration {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 70%;
+	background-image: url('https://static.vecteezy.com/system/resources/previews/056/419/153/non_2x/an-indian-wedding-decoration-with-garlands-free-png.png');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 1;
+	pointer-events: none;
 }
 
 .closing-message {
@@ -383,7 +403,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	box-shadow: none !important;
 }
 
 .event-icon img {
@@ -778,7 +798,16 @@ body {
 	}
 
 	.ghibli-image {
-		height: 250px !important;
+		height: auto !important;
+	}
+
+	.garland-decoration {
+		width: 100vw;
+		height: 80%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		margin-left: calc(-50vw + 50%);
+		position: absolute;
 	}
 
 	.closing-message {
@@ -865,9 +894,27 @@ body {
 		margin-bottom: 0 !important;
 	}
 
+	.ghibli-image-container {
+		overflow: visible !important;
+	}
+
 	.ghibli-image {
 		width: 100% !important;
-		height: 200px !important;
+		height: auto !important;
+	}
+
+	.garland-decoration {
+		width: 100vw;
+		height: 90%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		margin-left: 0;
+		position: absolute;
+		right: auto;
+	}
+
+	.closing-section {
+		overflow: visible !important;
 	}
 
 	.closing-message {
@@ -1203,6 +1250,7 @@ body {
 						<!-- Beautiful closing section with image -->
 						<div class="closing-section wow fadeIn" data-wow-duration="1800ms">
 							<div class="ghibli-image-container">
+								<div class="garland-decoration"></div>
 								<img src="./satya-main.png" alt="Sahiti & Satya" class="ghibli-image" />
 							</div>
 							<div class="closing-message">
