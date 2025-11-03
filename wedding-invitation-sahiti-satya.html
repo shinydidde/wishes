@@ -282,6 +282,35 @@ body {
 
 .timeline-header {
 	margin-bottom: 12px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+/* Decorative images on sides of events timeline header */
+.timeline-decoration-left,
+.timeline-decoration-right {
+	width: 80px;
+	height: 80px;
+	background-image: url('https://img.pikbest.com/origin/09/23/99/pIkbEsT6xpIkbEsTCXA.png!sw800');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	opacity: 0.8;
+	flex-shrink: 0;
+}
+
+.timeline-decoration-left {
+	transform: scaleX(-1); /* Flip horizontally for symmetry */
+}
+
+.timeline-header-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
 }
 
 .timeline-title {
@@ -697,6 +726,27 @@ body {
 
 	.timeline-header {
 		margin-bottom: 18px;
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+
+	.timeline-decoration-left,
+	.timeline-decoration-right {
+		width: 50px;
+		height: 50px;
+	}
+
+	.timeline-header-content {
+		width: 100%;
+		order: 2;
+	}
+
+	.timeline-decoration-left {
+		order: 1;
+	}
+
+	.timeline-decoration-right {
+		order: 3;
 	}
 
 	.timeline-title {
@@ -958,6 +1008,16 @@ body {
 		padding: 10px 8px;
 	}
 
+	.timeline-header {
+		gap: 8px;
+	}
+
+	.timeline-decoration-left,
+	.timeline-decoration-right {
+		width: 40px;
+		height: 40px;
+	}
+
 	.timeline-title {
 		font-size: 1.9rem !important;
 	}
@@ -1173,8 +1233,12 @@ body {
 						<!-- Wedding Events Section -->
 						<div class="events-timeline wow fadeInUp" data-wow-duration="1600ms">
 							<div class="timeline-header">
-								<h3 class="timeline-title">Celebration Events</h3>
-								<p class="timeline-subtitle">Join us for these beautiful pre-wedding festivities</p>
+								<div class="timeline-decoration-left"></div>
+								<div class="timeline-header-content">
+									<h3 class="timeline-title">Celebration Events</h3>
+									<p class="timeline-subtitle">Join us for these beautiful pre-wedding festivities</p>
+								</div>
+								<div class="timeline-decoration-right"></div>
 							</div>
 
 							<!-- Mehendi Ceremony -->
