@@ -72,7 +72,6 @@ body {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: #ffffff;
 	z-index: 9999;
 	display: flex;
 	justify-content: center;
@@ -409,21 +408,6 @@ body {
 	overflow: hidden;
 }
 
-.closing-section::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-image: url('./hands.png');
-	background-size: 60% auto;
-	background-position: center bottom;
-	background-repeat: no-repeat;
-	opacity: 0.2;
-	z-index: 0;
-	pointer-events: none;
-}
 
 .ghibli-image-container {
 	margin-bottom: 10px;
@@ -900,7 +884,6 @@ body {
 
 /* Overall Section Styling */
 .sukun-invitation {
-	background: #ffffff !important;
 	padding: 12px 20px 25px 20px !important;
 	min-height: auto;
 	position: relative;
@@ -916,6 +899,11 @@ body {
 .wpo-invitation-wrap {
 	max-width: 1200px;
 	margin: 0 auto;
+	background: transparent !important;
+}
+
+.wpo-invitation-area .wpo-invitation-wrap {
+	background: transparent !important;
 }
 
 .wpo-invitation-inner {
@@ -1913,6 +1901,9 @@ body {
 				</div>
 			</div>
 		</div>
+
+		<!-- Hands image at the end as background -->
+		<div class="hands-end-background"></div>
 		<div class="left-shape">
 			<div class="shape s1">
 				<img decoding="async" src="http://wpocean.site/wp-content/uploads/sites/19/2024/12/ishape-1.svg" alt="">
@@ -2214,5 +2205,23 @@ body {
 		}
 	});
 </script>
+
+<style>
+	.hands-end-background {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		background-image: url('./hands.png');
+		background-size: contain;
+		background-position: center bottom;
+		background-repeat: no-repeat;
+		pointer-events: none;
+		z-index: -1;
+		opacity: 0.3;
+	}
+</style>
 </body>
 </html>
