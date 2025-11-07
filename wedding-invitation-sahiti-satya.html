@@ -416,7 +416,7 @@ body {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-image: url('./back.png');
+	background-image: url('./hands.png');
 	background-size: 60% auto;
 	background-position: center bottom;
 	background-repeat: no-repeat;
@@ -432,18 +432,45 @@ body {
 	justify-content: center;
 	align-items: flex-start;
 	position: relative;
-	overflow: visible;
+	overflow: hidden;
 	z-index: 1;
 }
 
-.ghibli-image {
+.ghibli-image-slideshow {
+	position: relative;
 	width: 50%;
+	display: block;
+}
+
+@media (min-width: 769px) {
+	.ghibli-image-slideshow {
+		width: 30%;
+		max-width: 400px;
+	}
+
+	.ghibli-image-slideshow .ghibli-image {
+		object-fit: contain;
+		object-position: center;
+		max-height: 600px;
+	}
+
+	.garland-decoration {
+		top: 35% !important;
+	}
+}
+
+.ghibli-image-slideshow .ghibli-image {
+	width: 100%;
 	height: auto;
 	object-fit: cover;
-	object-position: top;
+	object-position: center top;
 	border-radius: 15px;
-	position: relative;
-	z-index: 2;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 1.5s ease-in-out;
+	max-height: 100%;
 	/* Smooth bottom edge fade */
 	mask-image: linear-gradient(to bottom, black 0%, black 75%, rgba(0,0,0,0.95) 85%, rgba(0,0,0,0.8) 90%, rgba(0,0,0,0.5) 95%, transparent 100%);
 	-webkit-mask-image: linear-gradient(to bottom, black 0%, black 75%, rgba(0,0,0,0.95) 85%, rgba(0,0,0,0.8) 90%, rgba(0,0,0,0.5) 95%, transparent 100%);
@@ -453,6 +480,12 @@ body {
 	-webkit-mask-repeat: no-repeat;
 	mask-position: center;
 	-webkit-mask-position: center;
+}
+
+.ghibli-image-slideshow .ghibli-image.active {
+	opacity: 1;
+	position: relative;
+	z-index: 2;
 }
 
 /* Garland decoration around ghibli image */
@@ -467,7 +500,7 @@ body {
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
-	z-index: 1;
+	z-index: 4;
 	pointer-events: none;
 }
 
@@ -1444,7 +1477,11 @@ body {
 		overflow: visible !important;
 	}
 
-	.ghibli-image {
+	.ghibli-image-slideshow {
+		width: 100% !important;
+	}
+
+	.ghibli-image-slideshow .ghibli-image {
 		width: 100% !important;
 		height: auto !important;
 	}
@@ -1740,7 +1777,7 @@ body {
 							<div class="sparkle" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
 							<div class="sparkle" style="top: 15%; right: 25%; animation-delay: 1s;"></div>
 							<div class="sparkle" style="bottom: 20%; left: 30%; animation-delay: 2s;"></div>
-							<h2 class="wow fadeInUp" data-wow-duration="1200ms">Sahiti & Satya's</h2>
+							<h2 class="wow fadeInUp" data-wow-duration="1200ms">Sahiti & Satya</h2>
 							<div class="wow fadeInUp" data-wow-duration="1400ms">
 								<span>We Are Getting Married On</span>
 							</div>
@@ -1748,7 +1785,7 @@ body {
 						</div>
 						<div class="middle-couple-pic wow zoomIn" data-wow-duration="1000ms">
 							<div class="middle-couple-pic-inner">
-								<img decoding="async" src="./both.png" alt="Sahiti & Satya's">
+								<img decoding="async" src="./satya-circle.png" alt="Sahiti & Satya's">
 							</div>
 							<div class="shape">
 								<img decoding="async" src="https://sukun.wpocean.site/wp-content/uploads/sites/19/2024/12/left-shape-3.png" alt="">
@@ -1857,7 +1894,12 @@ body {
 						<div class="closing-section wow fadeIn" data-wow-duration="1800ms">
 							<div class="ghibli-image-container">
 								<div class="garland-decoration"></div>
-								<img src="./tes.png" alt="Sahiti & Satya's" class="ghibli-image" />
+								<div class="ghibli-image-slideshow">
+									<img src="./g1.png" alt="Sahiti & Satya's" class="ghibli-image active" />
+									<img src="./g2.png" alt="Sahiti & Satya's" class="ghibli-image" />
+									<img src="./g3.png" alt="Sahiti & Satya's" class="ghibli-image" />
+									<img src="./g4.png" alt="Sahiti & Satya's" class="ghibli-image" />
+								</div>
 							</div>
 							<div class="closing-message">
 								<div class="decorative-image-container">
@@ -2124,6 +2166,53 @@ body {
 			}
 		}, { once: true });
 	}
+
+	// Image slideshow for ghibli images (g1 to g4)
+	jQuery(document).ready(function() {
+		var slideshow = jQuery('.ghibli-image-slideshow');
+		if (slideshow.length) {
+			var images = slideshow.find('.ghibli-image');
+			var currentIndex = 0;
+
+			// Initialize: Set first image as active (relative), others as absolute
+			images.each(function(index) {
+				if (index === 0) {
+					jQuery(this).addClass('active');
+				} else {
+					jQuery(this).css({
+						'position': 'absolute',
+						'top': '0',
+						'left': '0'
+					});
+				}
+			});
+
+			function showNextImage() {
+				// Get current active image
+				var currentImg = images.eq(currentIndex);
+				var nextIndex = (currentIndex + 1) % images.length;
+				var nextImg = images.eq(nextIndex);
+
+				// Switch positions - remove active from current, add to next
+				currentImg.css({
+					'position': 'absolute',
+					'top': '0',
+					'left': '0',
+					'opacity': '0'
+				}).removeClass('active');
+
+				nextImg.css({
+					'position': 'relative',
+					'opacity': '1'
+				}).addClass('active');
+
+				currentIndex = nextIndex;
+			}
+
+			// Change image every 3 seconds
+			setInterval(showNextImage, 3000);
+		}
+	});
 </script>
 </body>
 </html>
