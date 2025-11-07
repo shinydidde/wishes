@@ -426,6 +426,15 @@ body {
 	border-radius: 15px;
 	position: relative;
 	z-index: 2;
+	/* Smooth bottom edge fade */
+	mask-image: linear-gradient(to bottom, black 0%, black 75%, rgba(0,0,0,0.95) 85%, rgba(0,0,0,0.8) 90%, rgba(0,0,0,0.5) 95%, transparent 100%);
+	-webkit-mask-image: linear-gradient(to bottom, black 0%, black 75%, rgba(0,0,0,0.95) 85%, rgba(0,0,0,0.8) 90%, rgba(0,0,0,0.5) 95%, transparent 100%);
+	mask-size: 100% 100%;
+	-webkit-mask-size: 100% 100%;
+	mask-repeat: no-repeat;
+	-webkit-mask-repeat: no-repeat;
+	mask-position: center;
+	-webkit-mask-position: center;
 }
 
 /* Garland decoration around ghibli image */
@@ -876,6 +885,54 @@ body {
 	background: transparent !important;
 }
 
+/* Butterfly flying around countdown */
+.countdown-flying-butterfly {
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	background-image: url('https://i.pinimg.com/originals/cb/ea/73/cbea73ee3feceeda146c23596720eeae.gif');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	pointer-events: none;
+	z-index: 1;
+	opacity: 0.6;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	animation: flyAroundCountdown 12s ease-in-out infinite;
+}
+
+@keyframes flyAroundCountdown {
+	0% {
+		transform: translate(-50%, -50%) translate(0, 0) rotate(0deg);
+	}
+	12.5% {
+		transform: translate(-50%, -50%) translate(80px, -40px) rotate(15deg);
+	}
+	25% {
+		transform: translate(-50%, -50%) translate(100px, 20px) rotate(-10deg);
+	}
+	37.5% {
+		transform: translate(-50%, -50%) translate(60px, 80px) rotate(20deg);
+	}
+	50% {
+		transform: translate(-50%, -50%) translate(-60px, 80px) rotate(-15deg);
+	}
+	62.5% {
+		transform: translate(-50%, -50%) translate(-100px, 20px) rotate(10deg);
+	}
+	75% {
+		transform: translate(-50%, -50%) translate(-80px, -40px) rotate(-20deg);
+	}
+	87.5% {
+		transform: translate(-50%, -50%) translate(-20px, -60px) rotate(15deg);
+	}
+	100% {
+		transform: translate(-50%, -50%) translate(0, 0) rotate(0deg);
+	}
+}
+
 /* Couple Image Styling - Let theme handle the shape */
 .middle-couple-pic-inner {
 	position: relative;
@@ -891,7 +948,8 @@ body {
 
 .middle-couple-pic-inner img,
 .middle-couple-pic .middle-couple-pic-inner img,
-.middle-couple-pic-inner img[src*="satya-circle"] {
+.middle-couple-pic-inner img[src*="satya-circle"],
+.middle-couple-pic-inner img[src*="test2.png"] {
 	width: 100% !important;
 	height: auto !important;
 	object-fit: contain !important;
@@ -904,6 +962,15 @@ body {
 	box-shadow: none !important;
 	-webkit-box-shadow: none !important;
 	-moz-box-shadow: none !important;
+	/* Smooth bottom edge fade - only on the image itself */
+	mask-image: linear-gradient(to bottom, black 0%, black 75%, rgba(0,0,0,0.95) 85%, rgba(0,0,0,0.8) 90%, rgba(0,0,0,0.5) 95%, transparent 100%);
+	-webkit-mask-image: linear-gradient(to bottom, black 0%, black 75%, rgba(0,0,0,0.95) 85%, rgba(0,0,0,0.8) 90%, rgba(0,0,0,0.5) 95%, transparent 100%);
+	mask-size: 100% 100%;
+	-webkit-mask-size: 100% 100%;
+	mask-repeat: no-repeat;
+	-webkit-mask-repeat: no-repeat;
+	mask-position: center;
+	-webkit-mask-position: center;
 }
 
 
@@ -959,6 +1026,164 @@ body {
 	/* Countdown Timer - Already handled by theme, but ensure spacing */
 	.wpo-wedding-date {
 		margin: 12px 0;
+		position: relative;
+	}
+
+	/* Countdown container styling */
+	.wedding-date-wrap {
+		position: relative;
+		z-index: 5;
+	}
+
+	/* Butterfly decorations around countdown */
+	.countdown-butterfly {
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		background-image: url('https://png.pngtree.com/png-clipart/20230929/original/pngtree-watercolor-purple-butterfly-png-image_13017882.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		opacity: 0.7;
+		pointer-events: none;
+		z-index: 1;
+		animation: butterflyFloat 4s ease-in-out infinite;
+		filter: drop-shadow(0 4px 8px rgba(155, 123, 184, 0.3));
+	}
+
+	/* Butterfly positions and rotations */
+	.countdown-butterfly:nth-child(1) {
+		top: -20px;
+		left: 10%;
+		transform: rotate(-15deg);
+		animation-delay: 0s;
+	}
+
+	.countdown-butterfly:nth-child(2) {
+		top: 20%;
+		right: 5%;
+		transform: rotate(25deg);
+		animation-delay: 0.5s;
+	}
+
+	.countdown-butterfly:nth-child(3) {
+		bottom: 10%;
+		left: 5%;
+		transform: rotate(45deg);
+		animation-delay: 1s;
+	}
+
+	.countdown-butterfly:nth-child(4) {
+		top: 50%;
+		right: 15%;
+		transform: rotate(-30deg);
+		animation-delay: 1.5s;
+	}
+
+	.countdown-butterfly:nth-child(5) {
+		bottom: -15px;
+		right: 10%;
+		transform: rotate(15deg);
+		animation-delay: 2s;
+	}
+
+	.countdown-butterfly:nth-child(6) {
+		top: 10%;
+		left: 5%;
+		transform: rotate(-45deg);
+		animation-delay: 2.5s;
+	}
+
+	@keyframes butterflyFloat {
+		0%, 100% {
+			transform: translateY(0) rotate(var(--rotation, 0deg));
+		}
+		25% {
+			transform: translateY(-10px) rotate(calc(var(--rotation, 0deg) + 5deg));
+		}
+		50% {
+			transform: translateY(-5px) rotate(var(--rotation, 0deg));
+		}
+		75% {
+			transform: translateY(-15px) rotate(calc(var(--rotation, 0deg) - 5deg));
+		}
+	}
+
+	/* Butterfly per countdown box */
+	#clock .box {
+		position: relative;
+		overflow: visible;
+	}
+
+	#clock .box:nth-child(1)::before {
+		content: '';
+		position: absolute;
+		top: -25px;
+		left: -15px;
+		width: 45px;
+		height: 45px;
+		background-image: url('https://png.pngtree.com/png-clipart/20230929/original/pngtree-watercolor-purple-butterfly-png-image_13017882.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		opacity: 0.8;
+		transform: rotate(-20deg);
+		animation: butterflyFloat 3s ease-in-out infinite;
+		z-index: -1;
+		pointer-events: none;
+	}
+
+	#clock .box:nth-child(2)::before {
+		content: '';
+		position: absolute;
+		top: -20px;
+		right: -20px;
+		width: 50px;
+		height: 50px;
+		background-image: url('https://png.pngtree.com/png-clipart/20230929/original/pngtree-watercolor-purple-butterfly-png-image_13017882.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		opacity: 0.8;
+		transform: rotate(30deg);
+		animation: butterflyFloat 3.5s ease-in-out infinite;
+		animation-delay: 0.3s;
+		z-index: -1;
+		pointer-events: none;
+	}
+
+	#clock .box:nth-child(3)::before {
+		content: '';
+		position: absolute;
+		bottom: -25px;
+		left: -10px;
+		width: 45px;
+		height: 45px;
+		background-image: url('https://png.pngtree.com/png-clipart/20230929/original/pngtree-watercolor-purple-butterfly-png-image_13017882.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		opacity: 0.8;
+		transform: rotate(45deg);
+		animation: butterflyFloat 4s ease-in-out infinite;
+		animation-delay: 0.6s;
+		z-index: -1;
+		pointer-events: none;
+	}
+
+	#clock .box:nth-child(4)::before {
+		content: '';
+		position: absolute;
+		bottom: -20px;
+		right: -15px;
+		width: 50px;
+		height: 50px;
+		background-image: url('https://png.pngtree.com/png-clipart/20230929/original/pngtree-watercolor-purple-butterfly-png-image_13017882.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		opacity: 0.8;
+		transform: rotate(-35deg);
+		animation: butterflyFloat 3.2s ease-in-out infinite;
+		animation-delay: 0.9s;
+		z-index: -1;
+		pointer-events: none;
 	}
 
 	/* Events Timeline */
@@ -1506,6 +1731,8 @@ body {
 						</div>
 						<div class="wpo-wedding-date">
 							<div class="wedding-date-wrap">
+								<!-- Butterfly flying around countdown -->
+								<div class="countdown-flying-butterfly"></div>
 								<div class="row wow fadeInUp" data-wow-duration="1600ms">
 									<div class="col col-xs-12">
 										<div class="clock-grids">
