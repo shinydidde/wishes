@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sahiti & Satya's Wedding Invitation</title>
 
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="./favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+<link rel="apple-touch-icon" href="./favicon.ico">
+
 <!-- Primary Meta Tags -->
 <meta name="title" content="Sahiti & Satya's Wedding Invitation">
 <meta name="description" content="Join us in celebrating Sahiti & Satya's union on Saturday, 22nd November 2025 in Rajahmundry, Andhra Pradesh. మాకు మీ రాక ముఖ్యమైనది (Your presence is important to us).">
@@ -1413,6 +1418,21 @@ body {
 <body>
 <!-- Background Music -->
 <audio id="wedding-music" src="./wedding.mp3" preload="auto" autoplay loop="false"></audio>
+<script>
+	// Try to play immediately when audio element is created
+	(function() {
+		var audio = document.getElementById('wedding-music');
+		if (audio) {
+			audio.volume = 1.0;
+			// Try to play immediately
+			setTimeout(function() {
+				audio.play().catch(function() {
+					// Autoplay blocked, will retry later
+				});
+			}, 0);
+		}
+	})();
+</script>
 
 <!-- Music Toggle Button -->
 <button id="music-toggle" class="music-toggle-btn" aria-label="Toggle music">
@@ -1660,26 +1680,7 @@ body {
 
 	// Hide preloader when page is loaded
 	jQuery(window).on('load', function() {
-		jQuery('.preloader').fadeOut('slow', function() {
-			// Try to start music after preloader is hidden
-			setTimeout(function() {
-				var audio = document.getElementById('wedding-music');
-				if (audio && audio.paused) {
-					audio.play().then(function() {
-						// Update button if music control script is ready
-						var toggleBtn = document.getElementById('music-toggle');
-						if (toggleBtn && typeof updateButton === 'undefined') {
-							if (!audio.paused) {
-								toggleBtn.textContent = '🔊';
-								toggleBtn.classList.remove('muted');
-							}
-						}
-					}).catch(function(error) {
-						console.log('Autoplay after preloader failed:', error);
-					});
-				}
-			}, 500);
-		});
+		jQuery('.preloader').fadeOut('slow');
 	});
 
 	// Suppress owlCarousel errors if not needed
@@ -1692,6 +1693,8 @@ body {
 	var audio = document.getElementById('wedding-music');
 	var toggleBtn = document.getElementById('music-toggle');
 	var hasStarted = false;
+	var playAttempts = 0;
+	var maxAttempts = 20;
 
 	if (!audio || !toggleBtn) {
 		console.log('Audio or button not found');
@@ -1725,41 +1728,37 @@ body {
 			updateButton();
 		});
 
-		// Wait for audio to be ready and play
+		// Aggressive function to start music - tries multiple times
 		function startMusic() {
-			if (audio.readyState >= 2) { // HAVE_CURRENT_DATA or higher
-				if (audio.paused) {
-					var playPromise = audio.play();
-					if (playPromise !== undefined) {
-						playPromise.then(function() {
-							hasStarted = true;
-							updateButton();
-						}).catch(function(error) {
-							// Autoplay blocked - show button as muted but keep trying
+			if (hasStarted && !audio.paused) {
+				return; // Already playing
+			}
+
+			playAttempts++;
+			if (playAttempts > maxAttempts) {
+				return; // Stop trying after max attempts
+			}
+
+			// Try to play regardless of readyState
+			if (audio.paused) {
+				var playPromise = audio.play();
+				if (playPromise !== undefined) {
+					playPromise.then(function() {
+						hasStarted = true;
+						updateButton();
+					}).catch(function(error) {
+						// Autoplay blocked - keep trying
+						if (playAttempts < maxAttempts) {
+							setTimeout(startMusic, 200);
+						} else {
+							// Max attempts reached, show as muted
 							if (!hasStarted) {
 								toggleBtn.textContent = '🔇';
 								toggleBtn.classList.add('muted');
 							}
-							// Will retry on user interaction
-						});
-					}
+						}
+					});
 				}
-			} else {
-				// Wait for audio to load
-				audio.addEventListener('canplaythrough', function() {
-					var playPromise = audio.play();
-					if (playPromise !== undefined) {
-						playPromise.then(function() {
-							hasStarted = true;
-							updateButton();
-						}).catch(function(error) {
-							if (!hasStarted) {
-								toggleBtn.textContent = '🔇';
-								toggleBtn.classList.add('muted');
-							}
-						});
-					}
-				}, { once: true });
 			}
 		}
 
@@ -1784,7 +1783,6 @@ body {
 		// Make entire page clickable to start music on first interaction
 		function startOnFirstClick(e) {
 			if (!hasStarted && audio.paused) {
-				e.preventDefault();
 				audio.play().then(function() {
 					hasStarted = true;
 					updateButton();
@@ -1797,34 +1795,58 @@ body {
 			}
 		}
 
-		// Try to play immediately on page load
-		audio.load(); // Ensure audio is loading
+		// Force audio to load and start playing
+		audio.load();
 
-		// Immediate attempt
+		// Set volume to ensure it's audible
+		audio.volume = 1.0;
+
+		// Try immediately - multiple rapid attempts
+		startMusic();
+		setTimeout(startMusic, 50);
 		setTimeout(startMusic, 100);
+		setTimeout(startMusic, 200);
+		setTimeout(startMusic, 300);
+		setTimeout(startMusic, 500);
 
 		// Try on DOM ready
 		if (document.readyState === 'loading') {
 			document.addEventListener('DOMContentLoaded', function() {
-				setTimeout(startMusic, 150);
+				setTimeout(startMusic, 100);
+				setTimeout(startMusic, 300);
+				setTimeout(startMusic, 500);
 			});
 		} else {
-			setTimeout(startMusic, 150);
+			setTimeout(startMusic, 100);
+			setTimeout(startMusic, 300);
 		}
+
+		// Try when audio can play
+		audio.addEventListener('canplay', function() {
+			startMusic();
+		}, { once: false });
+
+		audio.addEventListener('canplaythrough', function() {
+			startMusic();
+		}, { once: false });
 
 		// Try after window loads
 		if (document.readyState === 'complete') {
+			setTimeout(startMusic, 100);
 			setTimeout(startMusic, 300);
 		} else {
 			window.addEventListener('load', function() {
+				setTimeout(startMusic, 100);
 				setTimeout(startMusic, 300);
+				setTimeout(startMusic, 500);
 			});
 		}
 
 		// Try after preloader hides
 		jQuery(window).on('load', function() {
 			jQuery('.preloader').fadeOut('slow', function() {
-				setTimeout(startMusic, 200);
+				setTimeout(startMusic, 100);
+				setTimeout(startMusic, 300);
 			});
 		});
 
@@ -1837,6 +1859,13 @@ body {
 					hasStarted = true;
 					updateButton();
 				});
+			}
+		}, { once: true });
+
+		// Try on scroll (some browsers allow this)
+		window.addEventListener('scroll', function() {
+			if (!hasStarted && audio.paused) {
+				startMusic();
 			}
 		}, { once: true });
 	}
