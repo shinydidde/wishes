@@ -420,41 +420,13 @@ body {
 	z-index: 1;
 }
 
-.ghibli-image-slideshow {
-	position: relative;
+.ghibli-image {
 	width: 50%;
-	display: block;
-}
-
-@media (min-width: 769px) {
-	.ghibli-image-slideshow {
-		width: 30%;
-		max-width: 400px;
-	}
-
-	.ghibli-image-slideshow .ghibli-image {
-		object-fit: contain;
-		object-position: center;
-		max-height: 600px;
-	}
-
-	.garland-decoration {
-		top: 35% !important;
-	}
-}
-
-.ghibli-image-slideshow .ghibli-image {
-	width: 100%;
 	height: auto;
+	display: block;
 	object-fit: cover;
 	object-position: center top;
 	border-radius: 15px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	opacity: 0;
-	transition: opacity 1.5s ease-in-out;
-	max-height: 100%;
 	/* Smooth bottom edge fade */
 	mask-image: linear-gradient(to bottom, black 0%, black 75%, rgba(0,0,0,0.95) 85%, rgba(0,0,0,0.8) 90%, rgba(0,0,0,0.5) 95%, transparent 100%);
 	-webkit-mask-image: linear-gradient(to bottom, black 0%, black 75%, rgba(0,0,0,0.95) 85%, rgba(0,0,0,0.8) 90%, rgba(0,0,0,0.5) 95%, transparent 100%);
@@ -466,10 +438,18 @@ body {
 	-webkit-mask-position: center;
 }
 
-.ghibli-image-slideshow .ghibli-image.active {
-	opacity: 1;
-	position: relative;
-	z-index: 2;
+@media (min-width: 769px) {
+	.ghibli-image {
+		width: 30%;
+		max-width: 400px;
+		object-fit: contain;
+		object-position: center;
+		max-height: 600px;
+	}
+
+	.garland-decoration {
+		top: 35% !important;
+	}
 }
 
 /* Garland decoration around ghibli image */
@@ -1465,11 +1445,7 @@ body {
 		overflow: visible !important;
 	}
 
-	.ghibli-image-slideshow {
-		width: 100% !important;
-	}
-
-	.ghibli-image-slideshow .ghibli-image {
+	.ghibli-image {
 		width: 100% !important;
 		height: auto !important;
 	}
@@ -1882,12 +1858,7 @@ body {
 						<div class="closing-section wow fadeIn" data-wow-duration="1800ms">
 							<div class="ghibli-image-container">
 								<div class="garland-decoration"></div>
-								<div class="ghibli-image-slideshow">
-									<img src="./g1.png" alt="Sahiti & Satya's" class="ghibli-image active" />
-									<img src="./g2.png" alt="Sahiti & Satya's" class="ghibli-image" />
-									<img src="./g3.png" alt="Sahiti & Satya's" class="ghibli-image" />
-									<img src="./g4.png" alt="Sahiti & Satya's" class="ghibli-image" />
-								</div>
+								<img src="./final.png" alt="Sahiti & Satya's" class="ghibli-image" />
 							</div>
 							<div class="closing-message">
 								<div class="decorative-image-container">
@@ -2158,52 +2129,6 @@ body {
 		}, { once: true });
 	}
 
-	// Image slideshow for ghibli images (g1 to g4)
-	jQuery(document).ready(function() {
-		var slideshow = jQuery('.ghibli-image-slideshow');
-		if (slideshow.length) {
-			var images = slideshow.find('.ghibli-image');
-			var currentIndex = 0;
-
-			// Initialize: Set first image as active (relative), others as absolute
-			images.each(function(index) {
-				if (index === 0) {
-					jQuery(this).addClass('active');
-				} else {
-					jQuery(this).css({
-						'position': 'absolute',
-						'top': '0',
-						'left': '0'
-					});
-				}
-			});
-
-			function showNextImage() {
-				// Get current active image
-				var currentImg = images.eq(currentIndex);
-				var nextIndex = (currentIndex + 1) % images.length;
-				var nextImg = images.eq(nextIndex);
-
-				// Switch positions - remove active from current, add to next
-				currentImg.css({
-					'position': 'absolute',
-					'top': '0',
-					'left': '0',
-					'opacity': '0'
-				}).removeClass('active');
-
-				nextImg.css({
-					'position': 'relative',
-					'opacity': '1'
-				}).addClass('active');
-
-				currentIndex = nextIndex;
-			}
-
-			// Change image every 3 seconds
-			setInterval(showNextImage, 3000);
-		}
-	});
 </script>
 
 <style>
@@ -2221,6 +2146,12 @@ body {
 		pointer-events: none;
 		z-index: -1;
 		opacity: 0.3;
+	}
+
+	@media (min-width: 769px) {
+		.hands-end-background {
+			display: none;
+		}
 	}
 </style>
 </body>
