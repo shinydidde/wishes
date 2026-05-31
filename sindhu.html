@@ -674,6 +674,51 @@
       transform: translateY(0);
     }
 
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s ease;
+      border: 1px solid var(--border-light);
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .project-details {
+      padding: 1.25rem;
+    }
+
+    .project-details h4 {
+      margin: 0 0 0.75rem 0;
+      font-size: 1rem;
+      color: var(--secondary-color);
+      text-transform: none;
+      letter-spacing: normal;
+    }
+
+    .project-details p {
+      margin: 0.35rem 0;
+      font-size: 0.85rem;
+    }
+
     @media (max-width: 768px) {
       .container {
         padding: 1rem;
@@ -776,9 +821,9 @@
 
           <div class="contact-info">
             <div class="contact-item">
-              <a href="tel:+919030085783">
+              <a href="tel:+919390828532">
                 <i class="fas fa-phone"></i>
-                +91 9030085783
+                +91 9390828532
               </a>
             </div>
             <div class="contact-item">
@@ -794,10 +839,11 @@
       <div class="section fade-in">
         <h2>Professional Summary</h2>
         <p>
-          Dedicated Soft Skills Trainer with extensive experience training learners across hospitality, aviation, IT, and
-          corporate sectors. Skilled in designing and delivering engaging programs focused on communication, interpersonal
-          skills, and professional development to enhance employability and personal growth. Proven contribution to
-          community development through impactful CSR initiatives and corporate training programs.
+          Dedicated Soft Skills Trainer and freelance content creator with extensive experience training learners across
+          hospitality, aviation, IT, and corporate sectors. Skilled in curriculum design, webinar facilitation, and
+          delivering engaging programs focused on communication, interpersonal skills, and professional development to
+          enhance employability and personal growth. Proven contribution to community development through impactful CSR
+          initiatives, government college workshops, and corporate training programs.
         </p>
       </div>
 
@@ -818,26 +864,38 @@
       <div class="section fade-in">
         <h2>Professional Experience</h2>
 
-        <h3>Faculty - Soft Skills | CMS Laboratories, Visakhapatnam</h3>
-        <p>Aug 21, 2024 - Present</p>
+        <h3>Freelancer — Content Creation & Curriculum Design | Vasishta 360 Channel</h3>
+        <p>2024 – Present (~2 years)</p>
         <ul>
+          <li><i class="fas fa-circle"></i> Curated engaging English language curriculums for diverse learner groups, focusing on vocabulary building and communication skills.</li>
+          <li><i class="fas fa-circle"></i> Conceptualized and conducted interactive webinars on vocabulary enhancement and effective communication.</li>
+          <li><i class="fas fa-circle"></i> Created video content on vocabulary, leveraging storytelling and real-life examples to simplify complex concepts.</li>
+          <li><i class="fas fa-circle"></i> Collaborated with the team to develop impactful learning resources, boosting learner engagement and retention.</li>
+        </ul>
+
+        <h3>English Language cum Soft Skills Trainer | CMS Labs (Crystal Management Services) & SDI</h3>
+        <p>Aug 2024 – Present (~1–2 years)</p>
+        <ul>
+          <li><i class="fas fa-circle"></i> Impart English language skills to pupils registered under the Skill Development Institute (SDI) collaboration project.</li>
+          <li><i class="fas fa-circle"></i> Integrated soft skills training as a key employability factor, training beneficiaries on industry-relevant interpersonal and workplace skills.</li>
           <li><i class="fas fa-circle"></i> Develop and conduct soft skills training programs for students from various engineering and degree colleges.</li>
-          <li><i class="fas fa-circle"></i> Implement CSR programs sponsored by CRPF-230 Battalion.</li>
-          <li><i class="fas fa-circle"></i> Mentor students in effective communication, teamwork, and professional etiquette.</li>
+          <li><i class="fas fa-circle"></i> Implement CSR programs sponsored by CRPF-230 Battalion and mentor students in communication, teamwork, and professional etiquette.</li>
         </ul>
 
-        <h3>Consultant - Communication & Soft Skills Trainer | ShriGs</h3>
-        <p>July 6, 2024 - Sept 7, 2024</p>
+        <h3>Consultant Faculty — Etiquette Trainer | Sumedha Hotel Management & Aviation</h3>
+        <p>2024 – Present (~1–2 years)</p>
         <ul>
-          <li><i class="fas fa-circle"></i> Delivered specialized communication and soft skills training for dockyard employees.</li>
+          <li><i class="fas fa-circle"></i> Served as consultant and guest faculty for hotel management and aviation colleges across multiple institutions.</li>
+          <li><i class="fas fa-circle"></i> Designed and conducted industry-relevant etiquette and soft skills programs for hospitality and aviation sectors.</li>
+          <li><i class="fas fa-circle"></i> Focused on customer service, leadership, professional etiquette, and confident self-presentation.</li>
+        </ul>
+
+        <h3>Consultant — Communication & Soft Skills Trainer | ShriG's (Dockyard Training Programs)</h3>
+        <p>2024 – 2025 (~1 year)</p>
+        <ul>
+          <li><i class="fas fa-circle"></i> Delivered specialized communication and soft skills training for dockyard employees under programs owned by ShriG's.</li>
           <li><i class="fas fa-circle"></i> Customized training methodologies for a high-performance, technical work environment.</li>
-        </ul>
-
-        <h3>Consultant Faculty - Communication & Soft Skills Trainer | Sumedha Hotel Management & Aviation</h3>
-        <p>Aug 16, 2024 - Oct 18, 2024</p>
-        <ul>
-          <li><i class="fas fa-circle"></i> Designed and conducted industry-relevant soft skills programs for hospitality and aviation sectors.</li>
-          <li><i class="fas fa-circle"></i> Focused on customer service, leadership, and professional etiquette.</li>
+          <li><i class="fas fa-circle"></i> Conducted dockyard training programs focused on workplace readiness and professional communication.</li>
         </ul>
 
         <h3>Manager | Libonji Creations, Chingola, Zambia</h3>
@@ -871,6 +929,33 @@
         <ul>
           <li><i class="fas fa-circle"></i> Provided employment readiness training under Tech Mahindra Foundation's CSR initiatives.</li>
         </ul>
+      </div>
+
+      <div class="section fade-in">
+        <h2>Featured Projects & Workshops</h2>
+        <p>Selected government college workshops conducted as Resource Person through Crystal Management Services (CMS Skill Center) under PM-USHA GIEI Scheme grants.</p>
+        <div class="projects-grid">
+          <div class="project-card">
+            <img src="images/workshop-personality-development.png" alt="Workshop on Personality Development for Confident Self-Presentation — Government Degree College, Paderu — 03 Jan 2026" />
+            <div class="project-details">
+              <h4>Personality Development for Confident Self-Presentation</h4>
+              <p><strong>Date:</strong> 3 January 2026</p>
+              <p><strong>Role:</strong> Resource Person — Corporate Trainer, Communication & Soft Skills</p>
+              <p><strong>Organised by:</strong> Government Degree College, Paderu (A.S.R District)</p>
+              <p><strong>Conducted by:</strong> Crystal Management Services (CMS Skill Center)</p>
+            </div>
+          </div>
+          <div class="project-card">
+            <img src="images/workshop-domestic-violence.png" alt="Workshop on Understanding and Addressing Domestic Violence — Government Degree College (Women), Marripalem — 31 Jan 2026" />
+            <div class="project-details">
+              <h4>Understanding & Addressing Domestic Violence</h4>
+              <p><strong>Date:</strong> 31 January 2026</p>
+              <p><strong>Role:</strong> Resource Person — Corporate Trainer, Communication & Soft Skills</p>
+              <p><strong>Organised by:</strong> Government Degree College (Women), Marripalem, Koyyuru Mandal</p>
+              <p><strong>Conducted by:</strong> Crystal Management Services (CMS Skill Center)</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="section fade-in">
